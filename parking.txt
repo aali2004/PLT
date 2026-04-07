@@ -1,0 +1,83 @@
+{
+    "1": {
+        "status": "free",
+        "car": null,
+        "vip": true
+    },
+    "2": {
+        "status": "free",
+        "car": null,
+        "vip": true
+    },
+    "3": {
+        "status": "free",
+        "car": null,
+        "vip": true
+    },
+    "4": {
+        "status": "free",
+        "car": null,
+        "vip": true
+    },
+    "5": {
+        "status": "free",
+        "car": null,
+        "vip": true
+    },
+    "6": {
+        "status": "occupied",
+        "car": {
+            "license": "ADW-3824",
+            "brand": "Toyota",
+            "model": "Camry",
+            "color": "Black",
+            "entry_time": "2026-04-07T11:27:10.246323"
+        },
+        "vip": false
+    },
+    "7": {
+        "status": "free",
+        "car": null,
+        "vip": false
+    },
+    "8": {
+        "status": "free",
+        "car": null,
+        "vip": false
+    },
+    "9": {
+        "status": "free",
+        "car": null,
+        "vip": false
+    },
+    "10": {
+        "status": "free",
+        "car": null,
+        "vip": false
+    },
+    "11": {
+        "status": "free",
+        "car": null,
+        "vip": false
+    },
+    "12": {
+        "status": "free",
+        "car": null,
+        "vip": false
+    },
+    "13": {
+        "status": "free",
+        "car": null,
+        "vip": false
+    },
+    "14": {
+        "status": "free",
+        "car": null,
+        "vip": false
+    },
+    "15": {
+        "status": "free",
+        "car": null,
+        "vip": false
+    }
+}

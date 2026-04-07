@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Car Entry</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <p id="date"></p>
+    <div class="main">
+        <h1 class="heading1">New Car Entry</h1>
+        <p class="info">Fill in the vehicle details.</p>
+        {% if error %}
+        <div class="message error">{{ error }}</div>
+        {% endif %}
+        <form method="post">
+            <div class="entry-content-container">
+                <div class="car-form">
+                    <label>License Plate</label>
+                    <input type="text" name="license" placeholder="ABC-1234" required>
+                    
+                    <label>Brand</label>
+                    <input type="text" name="brand" placeholder="e.g. Toyota, Honda" required>
+                    
+                    <label>Model</label>
+                    <input type="text" name="model" placeholder="e.g. Camry, Civic" required>
+                    
+                    <label>Color</label>
+                    <input type="text" name="color" placeholder="e.g. White, Black" required>
+                    
+                    <label>
+                        <input type="checkbox" name="vip" value="yes"> Is VIP?
+                    </label>
+                </div>
+                
+                <div class="side-buttons">
+                    <button type="submit" class="mainbtn">Confirm</button>
+                    <a href="/"><button type="button" class="mainbtn">Go Back</button></a>
+                </div>
+            </div>
+        </form>
+        </div>
+
+    <script>
+        const update = () => { 
+            const el = document.getElementById('date');
+            if(el) el.innerHTML = new Date().toLocaleString(); 
+        };
+        setInterval(update, 1000); update();
+    </script>
+</body>
+</html>

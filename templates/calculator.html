@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Parking Fee Calculator</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <p id="date"></p>
+    <div class="main">
+        <h1 class="heading1">Parking Fee<br>Calculator</h1>
+        <p class="info">Calculate parking fees for your vehicle.</p>
+        {% if error %}
+        <div class="message error">{{ error }}</div>
+        {% endif %}
+        {% if license %}
+        <div class="message success">
+            License: {{ license }}<br>
+            Total Hours Parked: {{ hours }}<br>
+            Billable Hours: {{ billable_hours }}<br>
+            Rate: ${{ rate }}/hour<br>
+            Total Fee: ${{ fee }}
+        </div>
+        {% endif %}
+        <div class="entry-content-container">
+            <form method="post" class="car-form">
+                <label>License Plate</label>
+                <input type="text" name="license" placeholder="Enter license plate" required>
+                
+                <button type="submit" class="mainbtn">Calculate Fee</button>
+            </form>
+            
+            <div class="side-buttons">
+                <a href="/"><button class="mainbtn">Go Back</button></a>
+            </div>
+        </div>
+    </div>
+    <script>
+        const update = () => { document.getElementById('date').innerHTML = new Date().toLocaleString(); };
+        setInterval(update, 1000); update();
+    </script>
+</body>
+</html>

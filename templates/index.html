@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Parking Tracker - Home</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <p id="date"></p>
+    <div class="main">
+        <h1 class="heading1">Parking Lot<br>Tracker</h1>
+        <p class="info">Manage your lot efficiently.</p>
+        <div class="pricing-info">
+            <h3>Pricing Information</h3>
+            <p>Regular Parking: $5 per hour</p>
+            <p>VIP Parking: $10 per hour</p>
+            <p>Free parking for the first 30 minutes</p>
+        </div>
+        {% if message %}
+        <div class="message success">{{ message }}</div>
+        {% endif %}
+        {% if error %}
+        <div class="message error">{{ error }}</div>
+        {% endif %}
+        <div class="buttons-grid">
+            <a href="/enter"><button class="mainbtn">Enter Car</button></a>
+            <a href="/remove"><button class="mainbtn">Remove Car</button></a>
+            <a href="/view"><button class="mainbtn">View Status</button></a>
+            <a href="/calculator"><button class="mainbtn">Fee Calculator</button></a>
+            <a href="/clear"><button class="mainbtn">Clear Lot</button></a>
+        </div>
+    </div>
+    <script>
+        const update = () => { document.getElementById('date').innerHTML = new Date().toLocaleString(); };
+        setInterval(update, 1000); update();
+    </script>
+</body>
+</html>

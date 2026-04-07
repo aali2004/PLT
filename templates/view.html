@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Status</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <p id="date"></p>
+    <div class="main">
+        <h1 class="heading1">Lot Status</h1>
+        <p class="info">Current occupied spots.</p>
+        <div class="lots-grid">
+            {% for lot_id, lot in lots.items() %}
+            <div class="lot {{ 'free' if lot.status == 'free' else 'occupied' }} {{ 'vip' if lot.vip else '' }}">
+                <div class="lot-number">{{ lot_id }}{% if lot.vip %} (VIP){% endif %}</div>
+                {% if lot.car %}
+                <div class="lot-content">{{ lot.car.license }}</div>
+                <div class="lot-details">{{ lot.car.brand }} {{ lot.car.model }}</div>
+                {% else %}
+                <div class="lot-content">Free</div>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+        <a href="/"><button class="mainbtn">Go Back</button></a>
+    </div>
+</body>
+</html>

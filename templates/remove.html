@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exit Car</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <p id="date"></p>
+    <div class="main">
+        <h1 class="heading1">Exit Car</h1>
+        {% if error %}
+        <div class="message error">{{ error }}</div>
+        {% endif %}
+        <div class="entry-content-container">
+            <form method="post" class="car-form">
+                <label>License Plate</label>
+                <input type="text" name="license" placeholder="Enter license plate to exit" required>
+                
+                <div class="side-buttons horizontal">
+                    <button type="submit" class="mainbtn">Remove</button>
+                    <a href="/"><button type="button" class="mainbtn">Go Back</button></a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const update = () => { 
+            document.getElementById('date').innerHTML = new Date().toLocaleString(); 
+        };
+        setInterval(update, 1000); update();
+    </script>
+</body>
+</html>

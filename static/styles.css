@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira+Stencil:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* basic reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: black;
+    color: wheat;
+    font-family: "Saira Stencil", sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+/* timestamp */
+#date {
+    text-align: center;
+    color: wheat;
+    font-size: 1.2rem;
+    margin: 20px 0;
+    width: 100%;
+    text-transform: uppercase;
+}
+
+/* main container */
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+/* typography */
+.heading1 {
+    text-align: center;
+    font-size: 75px;
+    line-height: 1.1;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.info {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 40px;
+    opacity: 0.9;
+    letter-spacing: 1px;
+}
+
+.pricing-info {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: rgba(245, 222, 179, 0.1);
+    border-radius: 10px;
+    border: 1px solid wheat;
+}
+
+.pricing-info h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: wheat;
+}
+
+.pricing-info p {
+    font-size: 18px;
+    margin: 5px 0;
+    opacity: 0.9;
+}
+
+/* center wrapper for form + buttons */
+.entry-content-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; /* this centers buttons vertically to the form */
+    gap: 60px;
+    width: 100%;
+    max-width: 1000px;
+    margin-top: 10px;
+}
+
+/* the input side */
+.car-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex: 1;
+    max-width: 450px;
+}
+
+.car-form label {
+    font-size: 22px;
+    margin-bottom: 2px;
+    text-align: left;
+}
+
+.car-form input {
+    font-size: 18px;
+    padding: 15px;
+    background-color: #0a0a0a;
+    border: 1px solid wheat;
+    color: wheat;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* the button side */
+.side-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* spacing between confirm and back */
+    justify-content: center;
+}
+
+.side-buttons.horizontal {
+    flex-direction: row;
+}
+
+.side-buttons.horizontal .mainbtn {
+    width: 180px;
+}
+
+/* global button style */
+.mainbtn {
+    font-family: "Saira Stencil", sans-serif;
+    font-size: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    background-color: wheat;
+    width: 280px;
+    height: 85px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 10px;
+}
+
+.mainbtn:hover {
+    background-color: white;
+    transform: scale(1.04);
+    box-shadow: 0 0 20px rgba(245, 222, 179, 0.4);
+}
+
+/* index page specific grid */
+.buttons-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+    max-width: 900px;
+    margin-top: 20px;
+}
+
+.buttons-grid a {
+    flex: 0 0 auto;
+}
+
+/* mobile responsiveness */
+@media (max-width: 850px) {
+    .entry-content-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .side-buttons {
+        flex-direction: row;
+        width: 100%;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .mainbtn {
+        width: 180px;
+        font-size: 20px;
+        height: 70px;
+    }
+
+    .buttons-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .heading1 {
+        font-size: 50px;
+    }
+}
+
+/* messages */
+.message {
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 20px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.success {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.error {
+    background-color: #f44336;
+    color: white;
+}
+
+/* lots grid */
+.lots-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 800px;
+    margin: 40px 0;
+}
+
+.lot {
+    width: 140px;
+    height: 140px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    padding: 10px;
+}
+
+.free {
+    background-color: #4CAF50; /* green */
+}
+
+.occupied {
+    background-color: #f44336; /* red */
+}
+
+.lot-number {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.lot-content {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.lot.vip {
+    border: 3px solid gold;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+}
