@@ -88,8 +88,7 @@ def calculator():
                 now = datetime.now()
                 duration = now - entry_time
                 hours = duration.total_seconds() / 3600
-                # Free first 30 minutes
-                billable_hours = max(0, hours - 0.5)
+                billable_hours = max(0, hours)
                 rate = 10 if empty_lots[lot]["vip"] else 5
                 fee = billable_hours * rate
                 return render_template('calculator.html', license=license, hours=round(hours, 2), billable_hours=round(billable_hours, 2), fee=round(fee, 2), rate=rate)

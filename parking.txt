@@ -25,14 +25,8 @@
         "vip": true
     },
     "6": {
-        "status": "occupied",
-        "car": {
-            "license": "ADW-3824",
-            "brand": "Toyota",
-            "model": "Camry",
-            "color": "Black",
-            "entry_time": "2026-04-07T11:27:10.246323"
-        },
+        "status": "free",
+        "car": null,
         "vip": false
     },
     "7": {
