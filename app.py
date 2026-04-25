@@ -4,6 +4,23 @@ from datetime import datetime
 
 app = Flask(__name__)
 
+class Vehicle:
+    def __init__(self, license, brand, model, color):
+        self.license = license
+        self.brand = brand
+        self.model = model
+        self.color = color
+        self.entry_time = datetime.now().isoformat()
+
+    def to_dict(self):
+        return {
+            "license": self.license,
+            "brand": self.brand,
+            "model": self.model,
+            "color": self.color,
+            "entry_time": self.entry_time
+        }
+
 def load_parking():
     with open("parking.txt", "r") as file:
         data = json.load(file)
@@ -22,17 +39,18 @@ def index():
 @app.route('/enter', methods=['GET', 'POST'])
 def enter():
     if request.method == 'POST':
-        car_data = {
-            "license": request.form['license'],
-            "brand": request.form['brand'],
-            "model": request.form['model'],
-            "color": request.form['color'],
-            "entry_time": datetime.now().isoformat()
-        }
+        new_car = Vehicle(
+            request.form['license'],
+            request.form['brand'],
+            request.form['model'],
+            request.form['color']
+        )
+        car_data = new_car.to_dict()
+        
         vip = request.form.get('vip') == 'yes'
         empty_lots = load_parking()
         
-        # check if cars already parked
+
         for lot in empty_lots:
             if empty_lots[lot]["car"] and empty_lots[lot]["car"].get("license") == car_data["license"]:
                 return redirect(url_for('enter', error='Car with this license plate is already parked'))
