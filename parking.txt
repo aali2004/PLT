@@ -25,14 +25,8 @@
         "vip": true
     },
     "6": {
-        "status": "occupied",
-        "car": {
-            "license": "LKC-5431",
-            "brand": "Honda",
-            "model": "Civic",
-            "color": "Black",
-            "entry_time": "2026-04-25T17:26:16.307449"
-        },
+        "status": "free",
+        "car": null,
         "vip": false
     },
     "7": {
