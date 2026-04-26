@@ -1,6 +1,23 @@
 import json
 from datetime import datetime
 
+#Class Functions:
+def __init__(self, license, brand, model, color):
+        self.license = license
+        self.brand = brand
+        self.model = model
+        self.color = color
+        self.entry_time = datetime.now().isoformat()
+
+def to_dict(self):
+        return {
+            "license": self.license,
+            "brand": self.brand,
+            "model": self.model,
+            "color": self.color,
+            "entry_time": self.entry_time
+        }
+
 def load_parking():
     with open("parking.txt", "r") as file:
         return json.load(file)
@@ -11,7 +28,8 @@ def save_parking(data):
         json.dump(data, file, indent=4)
 
 
-def park_car(license, brand, model, color, is_vip):
+
+def enter(license, brand, model, color, is_vip):
  
     lots = load_parking()
     
