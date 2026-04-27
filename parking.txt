@@ -4,11 +4,11 @@
         "car": null,
         "vip": true
     },
-        "2": {
-            "status": "free",
-            "car": null,
-            "vip": true
-        },
+    "2": {
+        "status": "free",
+        "car": null,
+        "vip": true
+    },
     "3": {
         "status": "free",
         "car": null,
